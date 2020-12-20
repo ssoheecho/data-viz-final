@@ -125,7 +125,7 @@ function drawMap(mapData, geoData) {
     .style('font-size', '0.75em')
     .style('font-weight', 200)
     .style('background-color', 'black')
-    .text("since 4/4/11 - 12/14/20")
+    .text("4/7/11 - 12/14/20")
 
   //  const zoom = d3.zoom()
   //   .scaleExtent([1, 2])
