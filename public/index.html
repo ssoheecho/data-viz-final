@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js" integrity="sha512-4UKI/XKm3xrvJ6pZS5oTRvIQGIzZFoXR71rRBb1y2N+PbwAsKa5tPl2J6WvbEvwN3TxQCm8hMzsl/pO+82iRlg==" crossorigin="anonymous"></script>
+  <script src="//unpkg.com/d3"></script>
+  <link rel="stylesheet" href="main.css">
+  <title>final</title>
+</head>
+<body>
+  <div id="intro">
+    <div id="modal-element">
+      <p>VISUALIZING <span id="yellow">TITLE IX</span> <br> FEDERAL SEXUAL ASSUALT INVESTIGATIONS</p>
+    </div>
+  </div>
+  <div class="grid-container-1"></div>
+  <div class="grid-container-2">
+    <div id="background-text">
+    <p>The central dataset used in this project comes from The Chronicle of Higher Education. The Chronicle’s Title IX investigation tracker records all federal investigations of colleges for possible violations of the gender-equity law Title IX involving alleged sexual violence. It tracks cases that were opened after 'Dear Colleague' letter was sent out by the Obama administration. The letter was pivotal in enforcing and toughening federal guidelines as to how colleges should deal with students' reports of sexual assault.</p>
+  </div>
+  </div>
+  <div class="grid-container-3">
+    <div id="waffle-text">
+      <p>Since April 4th 2011, the government has conducted <span>502</span> investigations of colleges for possibly mishandling reports of sexual violence.
+So far, <span>197</span> cases have been resolved and <span>305</span> remain open.</p>
+    </div>
+    <div id="waffle-container"></div>
+  </div>
+  <div class="grid-container-4">
+    <div id="additional-text">
+      <p>The map below is created with the data from the Title IX investigation tracker API. It only visualizes the federal sexual assault cases. One can only imagine how different the map might look if we add those under state and local investigations. While there has been more media and public attention on these cases in recent years, it is still important to emphasize how rampant sexual assault is on college campuses across the country. </p>
+    </div>
+  </div>
+  <div class="map-container"></div>
+  <!-- <div id="footer">
+    <span>Text and Data from The Chronicle of Higher Education</span>
+  </div> -->
+  <script src="map.js"></script>
+  <script src="chart.js"></script>
+  <script src="timeline.js"></script>
+</body>
+</html>
