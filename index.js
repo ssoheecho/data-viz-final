@@ -1,9 +1,14 @@
 // import necessary dependencies
 const express = require('express');
       axios = require('axios');
+      dotenv = require('dotenv');
 
 // initiate express
 const app = express();
+
+// get env variables
+dotenv.config();
+const PORT = process.env.PORT;
 
 // store title ix api endpoints
 const CASES_API_URL = "http://projects.chronicle.com/titleix/api/v1/cases/";
@@ -40,7 +45,7 @@ app.get("/api", async function(request, response) {
 })
 
 // listener at port 8000
-app.listen(8000, () => console.log('something is happening at localhost:8000'))
+app.listen(PORT, () => console.log(`something is happening at localhost:${PORT}`))
 
 // catch 404 errors
 app.use((request, response, next) => {
