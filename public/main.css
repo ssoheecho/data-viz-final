@@ -180,7 +180,6 @@ body::-webkit-scrollbar {
   margin: 0;
   background: #000;
   padding: 10px 30px;
-  border: dashed 1px #fff;
   font-size: 0.85em;
 }
 
