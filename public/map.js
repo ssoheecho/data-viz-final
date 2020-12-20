@@ -118,7 +118,7 @@ function drawMap(mapData, geoData) {
     .text("DISTRIBUTION OF CASES ACROSS THE NATION")
 
   svg.append('text')
-    .attr('x', width/3 + 90)
+    .attr('x', width/3 + 120)
     .attr('y', 60)
     .style('alignment-baseline', 'middle')
     .style('fill', 'white')
