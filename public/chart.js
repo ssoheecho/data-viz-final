@@ -1,26 +1,4 @@
 // adapted from https://multimedia.report/classes/coding/2018/exercises/basicwafflechart/
-  // define tooltip div:
-const tip = d3.select('#waffle-container')
-  .append('div')
-  .attr('class', 'waffle-tooltip');
-
-function mouseover(event, data) {
-  tip.style('left', `${event.clientX + 15}px`)
-  .style('top', `${event.clientY}px`)
-  .transition()
-  .style('opacity', 0.98);
-
-  tip.join('p')
-    .html(`<span>CASE #</span>: ${data.case_id}
-    <br> <span>INSTITUTION</span>: ${data.college}
-    <br><span>OPENED</span>: ${data.opened.split('T')[0]}`)
-    .style('font-weight', 200)
-}
-
-function mousemove(event) {
-  tip.style('left', `${event.clientX + 15}px`)
-    .style('top', `${event.clientY}px`)
-}
 
 function drawWaffle(data) {
   const margin = { top: 10, right: 150, bottom: 30, left: 0 },
@@ -73,6 +51,50 @@ function drawWaffle(data) {
     .on('mouseover', mouseover)
     .on('mousemove', mousemove)
     .on('mouseout', mouseout)
+
+  // define tooltip div:
+  const tip = d3.select('#waffle-container')
+  .append('div')
+  .attr('class', 'waffle-tooltip');
+
+  function mouseover(event, data) {
+    d3.select(this)
+      .style('fill', 'rgb(207, 154, 45)')
+
+    tip.style('left', `${event.clientX + 15}px`)
+      .style('top', `${event.clientY}px`)
+      .transition()
+      .style('opacity', 0.98);
+
+    tip.join('p')
+      .html(`<span>CASE #</span>: ${data.case_id}
+      <br> <span>INSTITUTION</span>: ${data.college}
+      <br><span>OPENED</span>: ${data.opened.split('T')[0]}`)
+      .style('font-weight', 200)
+    
+  }
+
+  function mousemove(event) {
+    d3.select(this)
+      .style('fill', 'rgb(207, 154, 45)')
+
+    tip.style('left', `${event.clientX + 15}px`)
+      .style('top', `${event.clientY}px`)
+  }
+
+  function mouseout(event, data) {
+    d3.select(this)
+      .style('fill', function() {
+        if(data.status == 'active') {
+          return 'rgb(126, 3, 8)'
+        } else {
+          return 'rgb(255, 247, 237)'
+        }
+      })
+    
+      tip.transition().style('opacity', 0);
+
+  }
 
   const legend = svg.selectAll('.legend')
     .data(keys)
